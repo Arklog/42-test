@@ -105,46 +105,47 @@ namespace ex06 {
 namespace ex07 {
 #include "ex07/ft_strupcase.c"
 
-TEST(ex07, ft_strupcase) {
-	char tlowcase[7];
-	char tnum[8];
-	char tmixed[10];
+	TEST(ex07, ft_strupcase) {
+		char tlowcase[7];
+		char tnum[8];
+		char tmixed[10];
 
-	strncpy(tlowcase, lowecase, 7);
-	strncpy(tnum, numeric, 8);
-	strncpy(tmixed, mixed, 10);
+		strncpy(tlowcase, lowecase, 7);
+		strncpy(tnum, numeric, 8);
+		strncpy(tmixed, mixed, 10);
 
-	EXPECT_STREQ("AJHSDF", ft_strupcase(tlowcase));
-	EXPECT_STREQ(numeric, ft_strupcase(tnum));
-	EXPECT_STREQ("87JDG{}][", ft_strupcase(tmixed));
-}
+		EXPECT_STREQ("AJHSDF", ft_strupcase(tlowcase));
+		EXPECT_STREQ(numeric, ft_strupcase(tnum));
+		EXPECT_STREQ("87JDG{}][", ft_strupcase(tmixed));
+	}
 }
 
 namespace ex08 {
 #include "ex08/ft_strlowcase.c"
-TEST(ex08, ft_lowecase) {
-	char tlowcase[7];
-	char tnum[8];
-	char tmixed[10];
 
-	strncpy(tlowcase, lowecase, 7);
-	strncpy(tnum, numeric, 8);
-	strncpy(tmixed, mixed, 10);
+	TEST(ex08, ft_lowecase) {
+		char tlowcase[7];
+		char tnum[8];
+		char tmixed[10];
 
-	EXPECT_STREQ(lowecase, ft_strlowcase(tlowcase));
-	EXPECT_STREQ(numeric, ft_strlowcase(tnum));
-	EXPECT_STREQ("87jdg{}][", ft_strlowcase(tmixed));
-}
+		strncpy(tlowcase, lowecase, 7);
+		strncpy(tnum, numeric, 8);
+		strncpy(tmixed, mixed, 10);
+
+		EXPECT_STREQ(lowecase, ft_strlowcase(tlowcase));
+		EXPECT_STREQ(numeric, ft_strlowcase(tnum));
+		EXPECT_STREQ("87jdg{}][", ft_strlowcase(tmixed));
+	}
 }
 
 namespace ex09 {
 #include "ex09/ft_strcapitalize.c"
 
-TEST(ex09, ft_strcapitalize) {
-	char a[] = "a new*test 46JHJ TkdJ";
+	TEST(ex09, ft_strcapitalize) {
+		char a[] = "a new*test 46JHJ TkdJ";
 
-	EXPECT_STREQ("A New*Test 46jhj Tkdj", ft_strcapitalize(a));
-}
+		EXPECT_STREQ("A New*Test 46jhj Tkdj", ft_strcapitalize(a));
+	}
 }
 
 namespace ex10 {

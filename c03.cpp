@@ -50,7 +50,7 @@ namespace ex00 {
 }
 
 namespace ex01 {
-#include "ex01/ft_strncpm.c"
+#include "ex01/ft_strncmp.c"
 
 	TEST(ex01, ft_strncpm) {
 		EXPECT_EQ(strncmp(a, a, 6), ex01::ft_strncmp(a, a, 6));
