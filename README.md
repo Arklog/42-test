@@ -11,4 +11,4 @@ Use :
 cd 42-test
 make SUBJECT=c02 GIT=git_repos_url_or_path
 ```
-
+Where subject is the SUBJECT you want to test and GIT is a path to a local git repository or non local url
