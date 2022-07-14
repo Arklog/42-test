@@ -1,18 +1,15 @@
-FOLDER=$(shell echo ${GIT} | tr '/' ' ' | awk '{print $$(NF)}')
-CPPFLAGS=g++ -Werror -Wall -Wextra -I. -I${FOLDER}
+FOLDER=$(shell realpath ~/$(shell echo ${GIT} | tr '/' ' ' | awk '{print $$(NF)}'))
+CPPFLAGS=g++ -Werror -Wall -Wextra -g -I. -I${FOLDER}
 INCLUDES=-L. -lgtest -lpthread
 
-all: | compile clean
+all: | clean compile
 
 compile:
-	-git submodule add -f ${GIT} 
-	-cd ${FOLDER}
-	-git checkout master
-	-git pull
-	-cd ..
-	-${CPPFLAGS} ${SUBJECT}.cpp ${INCLUDES}
+	git clone ${GIT} ${FOLDER}
+	-norminette ${FOLDER}
+	@-${CPPFLAGS} ${SUBJECT}.cpp ${INCLUDES}
 	-./a.out
 
 clean:
-	@-rm -f a.out
-	@-git rm --cached -f ${FOLDER} 2>>/dev/null || true
+	-rm -f a.out
+	-rm -rf ${FOLDER}
