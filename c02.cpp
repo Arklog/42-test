@@ -102,6 +102,8 @@ namespace ex06 {
 	}
 }
 
+/*
+ 
 namespace ex07 {
 #include "ex07/ft_strupcase.c"
 
@@ -143,8 +145,10 @@ namespace ex09 {
 
 	TEST(ex09, ft_strcapitalize) {
 		char a[] = "a new*test 46JHJ TkdJ";
+		char b[] = "a_n:w*test\t46ZHJ>TkdJ";
 
 		EXPECT_STREQ("A New*Test 46jhj Tkdj", ft_strcapitalize(a));
+		EXPECT_STREQ("A_N:W*Test\t46zhj>Tkdj", ft_strcapitalize(b));
 	}
 }
 
@@ -174,7 +178,6 @@ namespace ex10 {
 	}
 }
 
-/*
 namespace ex11 {
 #include "ex11/ft_putstr_non_printable.c"
 	
