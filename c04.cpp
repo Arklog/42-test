@@ -123,6 +123,26 @@ namespace ex04 {
 		ex04::ft_putnbr_base(-15, (char*)"0123456789abcdef");
 		end_stdout_redirect();
 		EXPECT_STREQ("-f", buffer);
+
+		start_stdout_redirect();
+		ex04::ft_putnbr_base(-15, (char*)"0023456789abcdef");
+		end_stdout_redirect();
+		EXPECT_STREQ("", buffer);
+
+		start_stdout_redirect();
+		ex04::ft_putnbr_base(-15, (char*)"0-23456789abcdef");
+		end_stdout_redirect();
+		EXPECT_STREQ("", buffer);
+
+		start_stdout_redirect();
+		ex04::ft_putnbr_base(-15, (char*)"f");
+		end_stdout_redirect();
+		EXPECT_STREQ("", buffer);
+
+		start_stdout_redirect();
+		ex04::ft_putnbr_base(-15, (char*)"");
+		end_stdout_redirect();
+		EXPECT_STREQ("", buffer);
 	}
 }
 #else

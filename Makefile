@@ -12,4 +12,5 @@ compile:
 
 clean:
 	-rm -f a.out
-	-rm -rf ${FOLDER}
+	-rm -rf ${FOLDER}/.git
+	-rm -rI ${FOLDER}
